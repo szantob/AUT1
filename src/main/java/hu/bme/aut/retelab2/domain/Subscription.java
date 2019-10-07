@@ -42,4 +42,9 @@ public class Subscription {
 	public void setAd(Ad ad) {
 		this.ad = ad;
 	}
+	
+	public void setPublicData() {
+		ad.setSecret(null);
+	}
+	
 }

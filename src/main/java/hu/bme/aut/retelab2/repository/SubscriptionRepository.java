@@ -24,9 +24,9 @@ public class SubscriptionRepository {
     
     @Transactional
     public List<Subscription> getSubscriptionsByAd(Ad ad) {
-    	String query = "SELECT a FROM Subscription a WHERE Ad == ?1;";
+    	String query = "SELECT a FROM Subscription a WHERE a.ad == ?1";
 		return em.createQuery(query, Subscription.class)
-        		.setParameter(1, ad)
+        		.setParameter(1, ad.getId())
         		.getResultList();
     	
     }

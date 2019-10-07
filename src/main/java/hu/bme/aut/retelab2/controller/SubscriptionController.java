@@ -36,6 +36,8 @@ public class SubscriptionController {
         adRepository.save(ad);
         subRepository.save(sc);
         
+        sc.setPublicData();
+        
 		return ResponseEntity.ok(sc);
     }
 }
