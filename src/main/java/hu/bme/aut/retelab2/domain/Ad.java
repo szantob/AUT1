@@ -1,10 +1,12 @@
 package hu.bme.aut.retelab2.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -26,6 +28,9 @@ public class Ad {
 	
 	@CreationTimestamp
 	private Date time;
+	
+	@OneToMany(mappedBy="ad")
+	private List<Subscription> subscriptions;
 
 	private String secret = SecretGenerator.generate();
 	

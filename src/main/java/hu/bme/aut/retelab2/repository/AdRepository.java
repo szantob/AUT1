@@ -35,10 +35,11 @@ public class AdRepository {
         		.getResultList();
     } 
 
+    @Transactional
     public Ad modify(Ad newAd) {
         Ad oldAd = em.find(Ad.class, newAd.getId());
-        if(oldAd.getSecret() == newAd.getSecret()) {
-        	em.persist(newAd);
+        if(oldAd.getSecret().equals(newAd.getSecret())) {
+        	em.merge(newAd);
         	return newAd;
         }
         return null;
