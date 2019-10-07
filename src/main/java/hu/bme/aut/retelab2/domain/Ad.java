@@ -81,4 +81,8 @@ public class Ad {
 	public void setSecret(String secret) {
 		this.secret = secret;
 	}
+
+	public void addSubscription(Subscription sc) {
+		subscriptions.add(sc);
+	}
 }
