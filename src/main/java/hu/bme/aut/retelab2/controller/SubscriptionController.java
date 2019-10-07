@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import hu.bme.aut.retelab2.domain.Ad;
@@ -25,7 +25,7 @@ public class SubscriptionController {
 	AdRepository adRepository;
 	
 	@PostMapping("{id}")
-    public ResponseEntity<Subscription> getById(@PathVariable long id, @RequestParam EmailDto email) {
+    public ResponseEntity<Subscription> getById(@PathVariable long id, @RequestBody EmailDto email) {
         Ad ad = adRepository.findById(id);
         
 		Subscription sc = new Subscription();

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import hu.bme.aut.retelab2.domain.Ad;
-import hu.bme.aut.retelab2.domain.Note;
 
 @Repository
 public class AdRepository {
